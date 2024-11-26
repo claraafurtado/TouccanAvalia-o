@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Avaliação</h2>
+
+        <div class="card">
+            <div class="decorative-line"></div>
+            <div class="profile-container">
+                <img src="./Imagem - Perfil (1).png" alt="Foto de perfil" class="profile-icon">
+                
+                <div class="user-info">
+                    <p><strong>Maria Silva -</strong><br><span class="function">Assistente Administrativo</span></p>
+                </div>
+            </div>
+
+            <div class="work-details">
+                <p><strong>Início:</strong> 08:30</p>
+                <p><strong>Término:</strong> 17:30</p>
+                <p><strong>Pagamento:</strong> <span class="payment">R$200</span></p>
+            </div>
+
+            <div class="evaluation">
+                <p>Avalie o trabalho:</p>
+                <div class="stars">
+                    <span class="star" onclick="setRating(1)">★</span>
+                    <span class="star" onclick="setRating(2)">★</span>
+                    <span class="star" onclick="setRating(3)">★</span>
+                    <span class="star" onclick="setRating(4)">★</span>
+                    <span class="star" onclick="setRating(5)">★</span>
+                </div>
+                <p class="email">Mariasilva@gmail.com</p>
+            </div>
+
+            <label for="comment" class="comment-label">Deixe seu comentário</label>
+            <textarea id="comment" maxlength="500"></textarea>
+            <span class="alert-icon" onclick="openReportModal()">⚠️</span>
+
+            <button class="save-button" onclick="saveComment()">Salvar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Denúncia -->
+    <div id="report-modal" class="modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <span class="report-icon">⚠️</span>
+                <h3 class="modal-title">Faça sua denúncia</h3>
+            </div>
+            <p class="modal-user">Maria Silva - Assistente Administrativo</p>
+            <p class="modal-description-title">Descrição da denúncia</p>
+            <textarea id="report-text" maxlength="500" placeholder="Descreva sua denúncia aqui..."></textarea>
+            <button class="save-report-button" onclick="sendReport()">Salvar</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
